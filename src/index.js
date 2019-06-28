@@ -1,13 +1,18 @@
-import _join from 'lodash/join';
-
-const _ = {
-  join: _join,
-}
+import _ from 'lodash';
+import styles from './style.scss';
+import Icon from './webpack_icon.png';
 
 function component() {
   const element = document.createElement('div');
 
-  element.innerHtml = _.join(['Hello', 'webpack'], ' ');
-
-  document.body.append(element);
+ // Lodash, currently included via a script, is required for this line to work
+ console.log(styles)
+  element.innerHTML = _.join(['Hello', 'webpack', 'ggg'], ' ');
+  element.classList.add(`${styles.hello}`);
+  const myIcon = new Image();
+  myIcon.src = Icon;
+  element.appendChild(myIcon);
+  return element;
 }
+
+  document.body.appendChild(component());
