@@ -1,7 +1,8 @@
 import _ from 'lodash';
 import styles from './style.scss';
 import Icon from './assets/imgs/webpack_icon.png';
-import SmallIcon from './assets/imgs/icon_below_5k.png'
+import SmallIcon from './assets/imgs/icon_below_5k.png';
+import xmlData from './assets/data/data.xml';
 
 function component() {
   const element = document.createElement('div');
@@ -26,6 +27,10 @@ function awsomeFontComponent() {
 
   return element;
 }
+
+(function checkXMLData() {
+  console.log(xmlData);
+})();
 
 document.body.appendChild(component());
 
