@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/hanyulo/webpack_trial#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.0.0",
     "csv-loader": "^3.0.2",
     "file-loader": "^4.0.0",
