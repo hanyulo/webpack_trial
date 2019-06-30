@@ -3,6 +3,8 @@ import styles from './style.scss';
 import Icon from './assets/imgs/webpack_icon.png';
 import SmallIcon from './assets/imgs/icon_below_5k.png';
 import xmlData from './assets/data/data.xml';
+import createMyComponent from './components/my-component/my-component.js';
+
 
 function component() {
   const element = document.createElement('div');
@@ -32,6 +34,10 @@ function awsomeFontComponent() {
   console.log(xmlData);
 })();
 
-document.body.appendChild(component());
 
-document.body.appendChild(awsomeFontComponent());
+(function main() {
+
+  document.body.appendChild(component());
+  document.body.appendChild(awsomeFontComponent());
+  document.body.appendChild(createMyComponent());
+})();
