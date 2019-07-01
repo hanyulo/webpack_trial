@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "webpack learning project",
   "private": "true",
+  "config": {
+    "production": "production",
+    "development": "development"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "NODE_ENV=$$npm_package_config_production webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +40,7 @@
     "url-loader": "^2.0.1",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {

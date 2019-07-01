@@ -1,18 +1,25 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const config = require('./config');
+const isProduction  = config.nodeEnv === 'production';
 
 module.exports = {
+  mode: isProduction ? 'production' : 'development',
   entry: {
     app: './src/index.js',
     about: './src/about.js',
   },
+  devServer: isProduction ? null : {
+    contentBase: './dist'
+  },
+  devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'My Webpack Learning project',
       minify: true,
-      hash: true,
+      hash: true
     })
   ],
   output: {

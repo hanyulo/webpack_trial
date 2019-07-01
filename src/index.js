@@ -4,6 +4,7 @@ import Icon from './assets/imgs/webpack_icon.png';
 import SmallIcon from './assets/imgs/icon_below_5k.png';
 import xmlData from './assets/data/data.xml';
 import createMyComponent from './components/my-component/my-component.js';
+import printMe from './components/print.js';
 
 
 function component() {
@@ -34,10 +35,18 @@ function awsomeFontComponent() {
   console.log(xmlData);
 })();
 
+function createButton() {
+  const btn = document.createElement('button');
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = printMe;
+  return btn;
+}
+
 
 (function main() {
-
+  console.log('run main function in index')
   document.body.appendChild(component());
   document.body.appendChild(awsomeFontComponent());
   document.body.appendChild(createMyComponent());
+  document.body.appendChild(createButton());
 })();
