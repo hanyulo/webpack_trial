@@ -1,5 +1,5 @@
 function printMe() {
-  console.log('you print me qwef qwef 123r!!!!');
+  console.log('HotModuleReplacementPlugin version4');
 }
 
 export default printMe;

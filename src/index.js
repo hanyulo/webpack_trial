@@ -43,10 +43,21 @@ function createButton() {
 }
 
 
+
 (function main() {
-  console.log('run main function in index')
+  console.log('!----------run main function in index----------!');
+
+  let hotModuleReplacementBtn = createButton();
   document.body.appendChild(component());
   document.body.appendChild(awsomeFontComponent());
   document.body.appendChild(createMyComponent());
-  document.body.appendChild(createButton());
+  document.body.appendChild(hotModuleReplacementBtn);
+
+  if (module.hot) {
+    module.hot.accept('./components/print.js', () => {
+      document.body.removeChild(hotModuleReplacementBtn);
+      hotModuleReplacementBtn = createButton();
+      document.body.appendChild(hotModuleReplacementBtn);
+    })
+  }
 })();

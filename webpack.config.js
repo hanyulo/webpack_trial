@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config = require('./config');
 const isProduction  = config.nodeEnv === 'production';
+const webpack = require('webpack');
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
@@ -11,7 +12,8 @@ module.exports = {
     about: './src/about.js',
   },
   devServer: isProduction ? null : {
-    contentBase: './dist'
+    contentBase: './dist',
+    hot: true,
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -20,7 +22,8 @@ module.exports = {
       title: 'My Webpack Learning project',
       minify: true,
       hash: true
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     filename: '[name].bundle.js',
