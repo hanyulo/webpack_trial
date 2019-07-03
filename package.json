@@ -11,6 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
+    "start:dev": "node server.js",
     "build": "NODE_ENV=$$npm_package_config_production webpack --config webpack.config.js"
   },
   "repository": {
@@ -30,6 +31,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.0.0",
     "csv-loader": "^3.0.2",
+    "express": "^4.17.1",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
