@@ -1,10 +1,14 @@
-import _ from 'lodash';
+import _join from 'lodash/join';
 import styles from './style.scss';
 import Icon from './assets/imgs/webpack_icon.png';
 import SmallIcon from './assets/imgs/icon_below_5k.png';
 import xmlData from './assets/data/data.xml';
 import createMyComponent from './components/my-component/my-component.js';
 import printMe from './components/print.js';
+
+const _ = {
+  join: _join,
+}
 
 
 function component() {
