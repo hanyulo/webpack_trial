@@ -8,7 +8,7 @@ import printMe from './components/print.js';
 
 const _ = {
   join: _join,
-}
+};
 
 
 function component() {
