@@ -8,8 +8,7 @@ const webpack = require('webpack');
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: {
-    app: './src/index.js',
-    about: './src/about.js',
+    index: './src/index.js',
   },
   devServer: isProduction ? null : {
     contentBase: './dist',
@@ -28,11 +27,6 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
   },
   module: {
     rules: [
